@@ -2,7 +2,7 @@ name: Публикация сайта Genesis
 
 on:
   push:
-    branches: [claude/september-block-layout-mknj0d]
+    branches: [main, claude/september-block-layout-mknj0d]
   workflow_dispatch:
 
 permissions:
@@ -27,6 +27,7 @@ jobs:
         run: |
           mkdir -p _site
           cp genesis-school.html _site/index.html
+          cp -r photos _site/photos
 
       - uses: actions/configure-pages@v5
         with:
